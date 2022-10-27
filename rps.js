@@ -20,12 +20,14 @@ function getComputerChoice(){
 
 function getUserChoice(){
     let userInput;
-    let keepGoing = false;
 
-    while(keepGoing === false){
+    while(true){
         userInput = prompt("Choose between Rock, Paper, or Scissors: ").toLowerCase();
         if(userInput === 'rock' || userInput === 'paper' || userInput === 'scissors'){
             return userInput;
+        }
+        else{
+            console.log("\nThat was not an acceptable input, try again.\n")
         } 
     }
     
@@ -83,9 +85,9 @@ function playRound(playerSelection, computerSelection){
 
 function playGame(){
     let winner;
-    let comp = 0;
-    let play = 0;
-    let tie = 0;
+    let comp = 0;  // number of times computer wins
+    let play = 0;  // number of times player wins
+    let tie = 0;   // number of ties
 
     for(let i = 0; i < 5; i++){
         winner = playRound();
