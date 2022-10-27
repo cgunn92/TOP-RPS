@@ -4,7 +4,6 @@ function getComputerChoice(){
     let scissors = 'scissors';
 
     const choice = Math.random() * 100;
-    console.log('getComputerChoice: ' + choice);
 
     if(choice <= 33){
         return rock;
@@ -91,7 +90,6 @@ function playGame(){
 
     for(let i = 0; i < 5; i++){
         winner = playRound();
-        console.log(winner);
         if(winner == 'player'){
             play++;
         }
