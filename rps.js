@@ -16,7 +16,7 @@ function getComputerChoice(){
     }
 }
 
-
+/*
 function getUserChoice(){
     let userInput;
 
@@ -31,7 +31,7 @@ function getUserChoice(){
     }
     
 }
-
+*/
 
 function playRound(playerSelection, computerSelection){
     computerSelection = getComputerChoice();
@@ -81,7 +81,7 @@ function playRound(playerSelection, computerSelection){
     return winner;
 }
 
-
+/*
 function playGame(){
     let winner;
     let comp = 0;  // number of times computer wins
@@ -112,5 +112,5 @@ function playGame(){
         console.log('It was a tie!');
     }
 }
-
+*/
 playGame();
