@@ -81,25 +81,36 @@ function playRound(playerSelection, computerSelection){
     return winner;
 }
 
-/*
+
 function playGame(){
     let winner;
     let comp = 0;  // number of times computer wins
     let play = 0;  // number of times player wins
     let tie = 0;   // number of ties
 
-    for(let i = 0; i < 5; i++){
+    /*for(let i = 0; i < 5; i++){
         winner = playRound();
-        if(winner == 'player'){
+        if(winner === 'player'){
             play++;
         }
-        else if(winner == 'computer'){
+        else if(winner === 'computer'){
             comp++;
         }
         else{
             tie++;
         }
         console.log('\nplayer wins: ' + play + '\ncomputer wins: ' + comp + '\nties: ' + tie);
+    }*/
+
+    winner = playRound();
+    if(winner === 'player'){
+        play++;
+    }
+    else if(winner === 'computer'){
+        comp++;
+    }
+    else{
+        tie++;
     }
 
     if(comp > play){
@@ -112,5 +123,5 @@ function playGame(){
         console.log('It was a tie!');
     }
 }
-*/
+
 playGame();
