@@ -7,7 +7,7 @@ const content = document.querySelector('div.content');
 const header = document.querySelector('h1');
 const board = document.querySelector('.scoreboard');
 const btns = document.querySelector('.buttonContainer');
-
+const results = document.createElement('div');
 const paper = document.querySelector('button.paper');
 const rock = document.querySelector('button.rock');
 const scissors = document.querySelector('button.scissors');
@@ -163,52 +163,3 @@ function restartGame(){
         header.textContent = 'Ok, if you want to play again just hit refresh!';
     });
 }
-
-
-
-function playGame(){
-    let winner;
-    let comp = 0;  // number of times computer wins
-    let play = 0;  // number of times player wins
-    let tie = 0;   // number of ties
-
-    /*for(let i = 0; i < 5; i++){
-        winner = playRound();
-        if(winner === 'player'){
-            play++;
-        }
-        else if(winner === 'computer'){
-            comp++;
-        }
-        else{
-            tie++;
-        }
-        console.log('\nplayer wins: ' + play + '\ncomputer wins: ' + comp + '\nties: ' + tie);
-    }*/
-
-    winner = playRound();
-    if(winner === 'player'){
-        play++;
-    }
-    else if(winner === 'computer'){
-        comp++;
-    }
-    else{
-        tie++;
-    }
-
-    if(comp > play){
-        console.log('The computer won ' + comp + ' out of 5 rounds and is the winner!');
-    }
-    else if(play > comp){
-        console.log('The player won ' + play + ' out of 5 rounds and is the winner!');
-    }
-    else if(tie === 5){
-        console.log('It was a tie!');
-    }
-}
-
-const results = document.createElement('div');
-
-//playRound();
-//playGame();
