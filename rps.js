@@ -1,7 +1,12 @@
 const win = document.querySelector('p.winCount');
 const lose = document.querySelector('p.loseCount');
 const tie = document.querySelector('p.tieCount');
+const paragraphs = document.querySelectorAll('p');
+
 const content = document.querySelector('div.content');
+const header = document.querySelector('h1');
+const board = document.querySelector('.scoreboard');
+const btns = document.querySelector('.buttonContainer');
 
 const paper = document.querySelector('button.paper');
 const rock = document.querySelector('button.rock');
@@ -120,8 +125,45 @@ function endGame(){
             results.textContent = 'Tie!';
             content.appendChild(results);
         }
+        restartGame();
     }
 }
+
+
+function reset(){
+    paragraphs.forEach((paragraph) => {
+        paragraph.textContent = '0';
+    });
+}
+
+
+function restartGame(){
+    const replay = document.createElement('div');
+    replay.textContent = 'Would you like to play again?';
+    const yesOrNo = document.createElement('div');
+    const yes = document.createElement('button');
+    yes.textContent = 'Yes!';
+    const no = document.createElement('button');
+    no.textContent = 'No!';
+
+    yesOrNo.appendChild(yes);
+    yesOrNo.appendChild(no);
+    replay.appendChild(yesOrNo);
+    content.appendChild(replay);
+
+    yes.addEventListener('click', () => {
+        content.removeChild(replay)
+        reset();
+    });
+
+    no.addEventListener('click', () => {
+        content.removeChild(replay);
+        content.removeChild(board);
+        content.removeChild(btns);
+        header.textContent = 'Ok, if you want to play again just hit refresh!';
+    });
+}
+
 
 
 function playGame(){
